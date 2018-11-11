@@ -15,6 +15,7 @@ public class DiffManagerImpl implements DiffManager {
 	
 	static final String DIFFERENT_SIZE_MESSAGE = "Left and right files have diffent sizes.";
 
+	@Override
 	public DiffResponse compare(String id) throws MissingFileException, IOException {
 		validateFileExistence(id);
 		if (theyHaveDifferentSizes(id)) {
