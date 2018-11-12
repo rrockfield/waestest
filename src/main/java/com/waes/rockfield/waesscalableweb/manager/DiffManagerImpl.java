@@ -10,11 +10,27 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 import org.springframework.stereotype.Service;
 
+/**
+ * DiffManager implementation using a O(n) byte to byte comparison
+ *
+ * @author lroca
+ */
 @Service("diffManager")
 public class DiffManagerImpl implements DiffManager {
-	
+
 	static final String DIFFERENT_SIZE_MESSAGE = "Left and right files have diffent sizes.";
 
+	/**
+	 * Find left and right files and execute a byte to byte comparison
+	 *
+	 * @param id Identification to locate left and right files
+	 * @return a DiffResponse JSON object containing the status of the
+	 * comparison: EQUAL, DIFFERENT or ERROR
+	 * @throws MissingFileException if id doesn't exist or if left or right file
+	 * is missing.
+	 * @throws IOException when an unexpected IO error happens while reading
+	 * bytes from any of the files.
+	 */
 	@Override
 	public DiffResponse compare(String id) throws MissingFileException, IOException {
 		validateFileExistence(id);

@@ -1,7 +1,7 @@
 package com.waes.rockfield.waesscalableweb.model;
 
 public class DiffResponse {
-	
+
 	private DiffStatus status;
 	private String message;
 

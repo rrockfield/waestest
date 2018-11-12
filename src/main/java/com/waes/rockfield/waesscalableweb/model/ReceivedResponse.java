@@ -1,10 +1,10 @@
 package com.waes.rockfield.waesscalableweb.model;
 
 public class ReceivedResponse {
-	
+
 	private ReceivedStatus status;
 	private String message;
-	
+
 	public ReceivedResponse() {
 	}
 
